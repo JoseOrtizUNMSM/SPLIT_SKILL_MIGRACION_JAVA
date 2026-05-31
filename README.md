@@ -76,8 +76,24 @@ Run both Back-end & Front-end in one place:
 
 > [Integrate Vue.js with Spring Boot Rest API](https://www.bezkoder.com/integrate-vue-spring-boot/)
 
+## Prerequisites
+
+- JDK 21 (Eclipse Temurin or similar)
+- Maven Wrapper included (`mvnw` / `mvnw.cmd`)
+
 ## Run Spring Boot application
+
+Linux / macOS:
+
 ```
-mvn spring-boot:run
+./mvnw spring-boot:run
 ```
+
+Windows:
+
+```
+mvnw.cmd spring-boot:run
+```
+
+The app runs on the default port (8080). Open `/tutorials` for the CRUD UI and `/h2-ui` for the H2 console.
 

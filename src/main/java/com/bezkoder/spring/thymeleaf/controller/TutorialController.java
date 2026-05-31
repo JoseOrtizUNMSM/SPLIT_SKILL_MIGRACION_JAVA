@@ -3,7 +3,6 @@ package com.bezkoder.spring.thymeleaf.controller;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,8 +17,11 @@ import com.bezkoder.spring.thymeleaf.repository.TutorialRepository;
 @Controller
 public class TutorialController {
 
-  @Autowired
-  private TutorialRepository tutorialRepository;
+  private final TutorialRepository tutorialRepository;
+
+  public TutorialController(TutorialRepository tutorialRepository) {
+    this.tutorialRepository = tutorialRepository;
+  }
 
   @GetMapping("/tutorials")
   public String getAll(Model model, @Param("keyword") String keyword) {
